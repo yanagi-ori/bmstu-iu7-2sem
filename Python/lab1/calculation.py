@@ -31,19 +31,7 @@ def half_divide_method(start_point, end_point, accuracy, max_iteration, current_
         elif function(mid_point) < 0:
             start_point = mid_point
             current_iteration += 1
-
-
-"""def half_divide_method(start_point, end_point, accuracy, max_iteration, current_iteration=0):
-    mid_point = (start_point + end_point) / 2
-    if current_iteration >= max_iteration:
-        return ['', '', '', ERROR_CODE_1]
-    if abs(function(mid_point)) < accuracy:
-        return [mid_point, function(mid_point), current_iteration, False]
-    elif function(mid_point) > 0:
-        return half_divide_method(start_point, mid_point, accuracy, max_iteration, current_iteration + 1)
-    elif function(mid_point) < 0:
-        return half_divide_method(mid_point, end_point, accuracy, max_iteration, current_iteration + 1)"""
-
+            
 
 def find_roots(start_point, end_point, step, eps, max_iteration):
     array_of_roots = []
