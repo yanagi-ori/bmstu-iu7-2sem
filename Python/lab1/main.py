@@ -71,9 +71,12 @@ def output_process(event):
                   2: 'Некорректный шаг',
                   3: 'Некорректная точность',
                   4: 'Некорректное максималное количество итераций',
-                  5: 'Пустые значения'}
+                  5: 'Пустые значения',
+                  6: 'Шаг меньше или равен точности'}
     if start == "" or end == "" or step == "" or eps == "" or max_iteration == "":
         error = 5
+    elif step <= eps:
+        error = 6
     else:
         x_start, x_end, step, eps, max_iteration, error = calculation.checker(start, end, step, eps, max_iteration)
     if error:
@@ -153,7 +156,7 @@ def draw_chart(x_start, x_end, array_of_roots):
 # Богатырев Иван ИУ7-22Б 2019
 root = Tk()
 root.title("Уточнение корней методом половинного деления")
-root.geometry("720x720")
+root.geometry("820x820")
 
 # Панель ввода данных
 frame_data_input = Frame(root, width=1280, height=250)
