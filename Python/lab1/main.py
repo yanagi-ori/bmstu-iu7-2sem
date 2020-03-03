@@ -61,6 +61,7 @@ def clean_table():
 def output_process(event):
     clean_table()
     # Считывание данных с полей ввода
+    func = field_function.get()
     start = field_from.get()
     end = field_to.get()
     step = field_step.get()
@@ -72,18 +73,15 @@ def output_process(event):
                   3: 'Некорректная точность',
                   4: 'Некорректное максималное количество итераций',
                   5: 'Пустые значения',
-                  6: 'Шаг меньше или равен точности'}
-    if start == "" or end == "" or step == "" or eps == "" or max_iteration == "":
-        error = 5
-    elif step <= eps:
-        error = 6
-    else:
-        x_start, x_end, step, eps, max_iteration, error = calculation.checker(start, end, step, eps, max_iteration)
+                  6: 'Шаг меньше или равен точности',
+                  7: 'Функция некорректна'}
+    
+    x_start, x_end, step, eps, max_iteration, error = calculation.checker(func, start, end, step, eps, max_iteration)
     if error:
         showerror('Ошибка', error_dict[error])
     else:
         try:
-            array_of_roots = calculation.find_roots(x_start, x_end, step, eps, max_iteration)
+            array_of_roots = calculation.find_roots(func, x_start, x_end, step, eps, max_iteration)
         except RecursionError:
             showerror("Ошибка", "Произошло переполнение стека")
         else:
@@ -126,15 +124,15 @@ def output_process(event):
                                        font=FONT_TNR)
                 too_much_roots.grid(row=1, column=0)
                 array_of_root_labels.append([too_much_roots])
-            draw_chart(x_start, x_end, array_of_roots)
+            draw_chart(func, x_start, x_end, array_of_roots)
 
 
 # Рисование графика
-def draw_chart(x_start, x_end, array_of_roots):
+def draw_chart(func_str, x_start, x_end, array_of_roots):
     plt.clf()
     plt.figure(1)
     arr_x = np.linspace(x_start, x_end, 100000)
-    arr_y = [calculation.function(i) for i in arr_x]
+    arr_y = [calculation.function(func_str, i) for i in arr_x]
     plt.plot(arr_x, arr_y, '-')
     max_y = 0
     min_y = 0
@@ -162,10 +160,10 @@ root.geometry("820x820")
 frame_data_input = Frame(root, width=1280, height=250)
 label_input = Label(frame_data_input, text="Введите параметры:", font=FONT_ARIAL)
 label_input.grid(row=0, column=0, columnspan=5, sticky=NW, ipady=3)
-#label_function = Label(frame_data_input, text="Функция:", font=FONT_ARIAL)
-#label_function.grid(row=1, column=0, sticky=W, pady=1)
-#field_function = Entry(frame_data_input, font=FONT_ARIAL, width=25)
-#field_function.grid(row=1, column=1, columnspan=4)
+label_function = Label(frame_data_input, text="Функция:", font=FONT_ARIAL)
+label_function.grid(row=1, column=0, sticky=W, pady=1)
+field_function = Entry(frame_data_input, font=FONT_ARIAL, width=25)
+field_function.grid(row=1, column=1, columnspan=4)
 label_interval = Label(frame_data_input, text="Интервал", font=FONT_ARIAL)
 label_interval.grid(row=2, column=0, sticky=W, pady=1)
 label_from = Label(frame_data_input, text="от", font=FONT_ARIAL)
