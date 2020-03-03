@@ -39,14 +39,12 @@ def find_roots(start_point, end_point, step, eps, max_iteration):
     while x_next <= end_point:
         if abs(function(x_cur)) < eps:
             array_of_roots.append(0)
-            array_of_roots[-1] = [len(array_of_roots),
-                                  '{:g}..{:g}'.format(x_cur, x_next),
+            array_of_roots[-1] = [len(array_of_roots), '{:g}..{:g}'.format(x_cur, x_next),
                                   x_cur, function(x_cur), 1, False]
         elif function(x_cur) * function(x_next) < 0:
             array_of_roots.append(0)
             array_of_roots[-1] = ([len(array_of_roots), '{:g}..{:g}'.format(x_cur, x_next)] +
                                   half_divide_method(x_cur, x_next, eps, max_iteration))
-
         x_cur = x_next
         x_next = round(x_cur + step, 10)
         if x_next > end_point and end_point - x_cur > eps:
