@@ -1,4 +1,7 @@
 def to_decimal_convert(num):
+    for i in range(len(str(num))):
+        if str(num)[i] not in {"i", "0", "1", "."}:
+            return "not ternary"
     array = num.split(".")
     if len(array) == 1:
         array = list(array[0])
@@ -15,7 +18,11 @@ def to_decimal_convert(num):
         asym_process(right)
         right.reverse()
         if right[-1] == "-1": right[-1] = "3"
-        return left_post_process(left) + right_post_process(right)
+        left = left_post_process(left)
+        if left < 0:
+            return left - right_post_process(right)
+        else:
+            return left + right_post_process(right)
 
 
 def left_post_process(array):
@@ -29,7 +36,7 @@ def right_post_process(array):
     sum = 0
     for i in range(len(array)):
         sum += int(array[i]) * 3 ** (-i - 1)
-    return sum - 1
+    return sum
 
 
 def replace(array):

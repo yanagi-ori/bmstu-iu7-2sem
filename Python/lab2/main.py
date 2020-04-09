@@ -9,13 +9,15 @@ def keyboard_input(input, text):
     elif input == "to decimal":
         label_input.config(text=to_decimal_convert(text))
     elif input == "del":
-        label_input.config(text=text[:-1])
+        label_input.config(text=str(text)[:-1])
     elif input == "C":
         label_input.config(text="")
     elif input == "OFF":
         exit()
     elif input == "-":
-        if text[0] == "-":
+        if text == "":
+            label_input.config(text="-")
+        elif text[0] == "-":
             label_input.config(text=text[1:])
         else:
             label_input.config(text=("-" + text))
