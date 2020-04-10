@@ -7,7 +7,7 @@ def exit_program():
     root.destroy()
 
 
-def about_programm():
+def about_program():
     window = Toplevel()
     window.title("О программе")
     info = Label(window, text='''
