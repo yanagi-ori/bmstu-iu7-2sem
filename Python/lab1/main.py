@@ -15,7 +15,7 @@ def exit_program():
     root.destroy()
 
 
-def about_programm():
+def about_program():
     window = Toplevel()
     window.title("О программе")
     info = Label(window, text='''
@@ -218,7 +218,7 @@ frame_roots_table.grid(row=1)
 menu_main = Menu(root)
 root.config(menu=menu_main)
 menu = Menu(menu_main, tearoff=0)
-menu.add_command(label="О программе", command=about_programm)
+menu.add_command(label="О программе", command=about_program)
 menu.add_command(label="Описание ошибок", command=list_of_errors)
 menu.add_command(label="Выход", command=exit_program)
 menu_main.add_cascade(label="Меню", menu=menu)
