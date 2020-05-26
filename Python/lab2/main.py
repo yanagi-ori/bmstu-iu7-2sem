@@ -38,7 +38,7 @@ def keyboard_input(input, text):
         label_input.config(text="")
     elif input == "OFF":
         exit()
-    elif input == "-":
+    elif input == "-" or input == "minus":
         if text == "":
             label_input.config(text="-")
         elif text[0] == "-":
@@ -53,7 +53,7 @@ def keyboard_input(input, text):
 
 
 def interlayer(event):
-    if event.keysym in {"1", "2", "3", "4", "5", "6", "7", "8", "9", "0", ".", "i", "BackSpace", "period"}:
+    if event.keysym in {"1", "2", "3", "4", "5", "6", "7", "8", "9", "0", ".", "i", "BackSpace", "period", "minus"}:
         keyboard_input(event.keysym, label_input['text'])
 
 
