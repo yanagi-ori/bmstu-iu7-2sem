@@ -46,7 +46,7 @@ def keyboard_input(input, text):
         else:
             label_input.config(text=("-" + text))
     elif input in {"1", "2", "3", "4", "5", "6", "7", "8", "9", "0", ".", "i"}:
-        new_text = text + input + ""
+        new_text = str(text) + input + ""
         label_input.config(text=new_text)
     else:
         label_input.config(text=input)
