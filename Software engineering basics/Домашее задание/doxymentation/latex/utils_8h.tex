@@ -1,0 +1,60 @@
+\hypertarget{utils_8h}{}\doxysection{C\+:/msys/home/yanag/bse\+\_\+homework/utils.h File Reference}
+\label{utils_8h}\index{C:/msys/home/yanag/bse\_homework/utils.h@{C:/msys/home/yanag/bse\_homework/utils.h}}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{utils_8h_aa12865743a59923c4c070c8201b36217}{get\+\_\+row}} (F\+I\+LE $\ast$file, char bin\mbox{[}$\,$\mbox{]})
+\item 
+int \mbox{\hyperlink{utils_8h_a25aa9fc1e6ac2d2afd067a25bca3bc7d}{bin\+\_\+to\+\_\+hex}} (char bin\mbox{[}$\,$\mbox{]}, char hex\mbox{[}$\,$\mbox{]})
+\begin{DoxyCompactList}\small\item\em Функция перевода двоичного числа в шестнадцатеричную систему счисления. Блок А2. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{utils_8h_a954ebfa62be717a72b133c42efde4d83}{write\+\_\+row}} (F\+I\+LE $\ast$file, char hex\mbox{[}21\mbox{]})
+\begin{DoxyCompactList}\small\item\em Записывает строку в новый файл \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{utils_8h_a25aa9fc1e6ac2d2afd067a25bca3bc7d}\label{utils_8h_a25aa9fc1e6ac2d2afd067a25bca3bc7d}} 
+\index{utils.h@{utils.h}!bin\_to\_hex@{bin\_to\_hex}}
+\index{bin\_to\_hex@{bin\_to\_hex}!utils.h@{utils.h}}
+\doxysubsubsection{\texorpdfstring{bin\_to\_hex()}{bin\_to\_hex()}}
+{\footnotesize\ttfamily int bin\+\_\+to\+\_\+hex (\begin{DoxyParamCaption}\item[{char}]{bin\mbox{[}$\,$\mbox{]},  }\item[{char}]{hex\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+
+
+
+Функция перевода двоичного числа в шестнадцатеричную систему счисления. Блок А2. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \mbox{[}\+I\+N\mbox{]}} & bin -\/ двоичное число \\
+\hline
+{\em \mbox{[}\+O\+U\+T\mbox{]}} & hex -\/ шестнадцатеричное число \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Код ошибки E\+R\+R\+O\+R\+\_\+\+C\+O\+N\+V\+E\+RT при ошибке перевода 
+\end{DoxyReturn}
+\mbox{\Hypertarget{utils_8h_aa12865743a59923c4c070c8201b36217}\label{utils_8h_aa12865743a59923c4c070c8201b36217}} 
+\index{utils.h@{utils.h}!get\_row@{get\_row}}
+\index{get\_row@{get\_row}!utils.h@{utils.h}}
+\doxysubsubsection{\texorpdfstring{get\_row()}{get\_row()}}
+{\footnotesize\ttfamily int get\+\_\+row (\begin{DoxyParamCaption}\item[{F\+I\+LE $\ast$}]{file,  }\item[{char}]{bin\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{utils_8h_a954ebfa62be717a72b133c42efde4d83}\label{utils_8h_a954ebfa62be717a72b133c42efde4d83}} 
+\index{utils.h@{utils.h}!write\_row@{write\_row}}
+\index{write\_row@{write\_row}!utils.h@{utils.h}}
+\doxysubsubsection{\texorpdfstring{write\_row()}{write\_row()}}
+{\footnotesize\ttfamily int write\+\_\+row (\begin{DoxyParamCaption}\item[{F\+I\+LE $\ast$}]{file,  }\item[{char}]{hex\mbox{[}21\mbox{]} }\end{DoxyParamCaption})}
+
+
+
+Записывает строку в новый файл 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \mbox{[}\+I\+N\mbox{]}} & file -\/ файловая переменная output-\/файла \\
+\hline
+{\em \mbox{[}\+I\+N\mbox{]}} & hex -\/ шетснадцатеричное число \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Код ошибки E\+R\+R\+O\+R\+\_\+\+IO при пробелмах записи в файл 
+\end{DoxyReturn}

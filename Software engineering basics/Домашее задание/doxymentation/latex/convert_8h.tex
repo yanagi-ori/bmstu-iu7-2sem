@@ -1,0 +1,116 @@
+\hypertarget{convert_8h}{}\doxysection{C\+:/msys/home/yanag/bse\+\_\+homework/convert.h File Reference}
+\label{convert_8h}\index{C:/msys/home/yanag/bse\_homework/convert.h@{C:/msys/home/yanag/bse\_homework/convert.h}}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{convert_8h_add11cb045ec63eb133421899e023bb6b}{get\+\_\+length}} (const char $\ast$bin)
+\begin{DoxyCompactList}\small\item\em Находит длину двоичного числа \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{convert_8h_af42f9402f75be2efe043a367792a783f}{is\+\_\+len\+\_\+multiple\+\_\+of\+\_\+four}} (int len)
+\begin{DoxyCompactList}\small\item\em Проверка кратности 4. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{convert_8h_aad8e9755a15f9e9d82fc4b9b1148a5b8}{normalization}} (const char $\ast$bin, int add, int len, char $\ast$ed)
+\begin{DoxyCompactList}\small\item\em Нормализует двоичное число \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{convert_8h_af1294cf4c6ea4adffbfa3767657d891d}{to\+\_\+tetrads}} (char $\ast$bin, char array\+\_\+of\+\_\+tetrads\mbox{[}20\mbox{]}\mbox{[}5\mbox{]})
+\begin{DoxyCompactList}\small\item\em Разбивает двоичное число на тетрады \end{DoxyCompactList}\item 
+char \mbox{\hyperlink{convert_8h_abea06c28b5228f6ed5f1e3a115d5a92d}{to\+\_\+hex}} (char tetrad\mbox{[}5\mbox{]})
+\begin{DoxyCompactList}\small\item\em Табличный перевод в 16ную систему \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{convert_8h_add11cb045ec63eb133421899e023bb6b}\label{convert_8h_add11cb045ec63eb133421899e023bb6b}} 
+\index{convert.h@{convert.h}!get\_length@{get\_length}}
+\index{get\_length@{get\_length}!convert.h@{convert.h}}
+\doxysubsubsection{\texorpdfstring{get\_length()}{get\_length()}}
+{\footnotesize\ttfamily int get\+\_\+length (\begin{DoxyParamCaption}\item[{const char $\ast$}]{bin }\end{DoxyParamCaption})}
+
+
+
+Находит длину двоичного числа 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \mbox{[}\+I\+N\mbox{]}} & bin -\/ двоичное число \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Длину доичного числа 
+\end{DoxyReturn}
+\mbox{\Hypertarget{convert_8h_af42f9402f75be2efe043a367792a783f}\label{convert_8h_af42f9402f75be2efe043a367792a783f}} 
+\index{convert.h@{convert.h}!is\_len\_multiple\_of\_four@{is\_len\_multiple\_of\_four}}
+\index{is\_len\_multiple\_of\_four@{is\_len\_multiple\_of\_four}!convert.h@{convert.h}}
+\doxysubsubsection{\texorpdfstring{is\_len\_multiple\_of\_four()}{is\_len\_multiple\_of\_four()}}
+{\footnotesize\ttfamily int is\+\_\+len\+\_\+multiple\+\_\+of\+\_\+four (\begin{DoxyParamCaption}\item[{int}]{len }\end{DoxyParamCaption})}
+
+
+
+Проверка кратности 4. 
+
+Функция, проверящая кратность длины двоичного числа четырем 
+\begin{DoxyParams}{Parameters}
+{\em \mbox{[}\+I\+N\mbox{]}} & len -\/ длина двоичного числа \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+1, если кратно 4, 0 -\/ если нет 
+\end{DoxyReturn}
+\mbox{\Hypertarget{convert_8h_aad8e9755a15f9e9d82fc4b9b1148a5b8}\label{convert_8h_aad8e9755a15f9e9d82fc4b9b1148a5b8}} 
+\index{convert.h@{convert.h}!normalization@{normalization}}
+\index{normalization@{normalization}!convert.h@{convert.h}}
+\doxysubsubsection{\texorpdfstring{normalization()}{normalization()}}
+{\footnotesize\ttfamily void normalization (\begin{DoxyParamCaption}\item[{const char $\ast$}]{bin,  }\item[{int}]{add,  }\item[{int}]{len,  }\item[{char $\ast$}]{ed }\end{DoxyParamCaption})}
+
+
+
+Нормализует двоичное число 
+
+Функция добавляет необходимое количество нулей для кратоности числа четырем 
+\begin{DoxyParams}{Parameters}
+{\em \mbox{[}\+I\+N\mbox{]}} & bin -\/ исходное двоичное число \\
+\hline
+{\em \mbox{[}\+I\+N\mbox{]}} & add -\/ количество добавляемых нулей \\
+\hline
+{\em \mbox{[}\+I\+N\mbox{]}} & len -\/ длина исходного двоичного числа \\
+\hline
+{\em \mbox{[}\+O\+U\+T\mbox{]}} & ed -\/ измененное двоичное число \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Нормализированное двоичное число, готовое для перевода в шестнадцатеричную систему 
+\end{DoxyReturn}
+\mbox{\Hypertarget{convert_8h_abea06c28b5228f6ed5f1e3a115d5a92d}\label{convert_8h_abea06c28b5228f6ed5f1e3a115d5a92d}} 
+\index{convert.h@{convert.h}!to\_hex@{to\_hex}}
+\index{to\_hex@{to\_hex}!convert.h@{convert.h}}
+\doxysubsubsection{\texorpdfstring{to\_hex()}{to\_hex()}}
+{\footnotesize\ttfamily char to\+\_\+hex (\begin{DoxyParamCaption}\item[{char}]{tetrad\mbox{[}5\mbox{]} }\end{DoxyParamCaption})}
+
+
+
+Табличный перевод в 16ную систему 
+
+Функция преобразует тетраду двоичного числа в 16чное путем табличного перевода 
+\begin{DoxyParams}{Parameters}
+{\em tetrad} & -\/ тетрада \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Код ошибки -\/ пустой символ 
+\end{DoxyReturn}
+\mbox{\Hypertarget{convert_8h_af1294cf4c6ea4adffbfa3767657d891d}\label{convert_8h_af1294cf4c6ea4adffbfa3767657d891d}} 
+\index{convert.h@{convert.h}!to\_tetrads@{to\_tetrads}}
+\index{to\_tetrads@{to\_tetrads}!convert.h@{convert.h}}
+\doxysubsubsection{\texorpdfstring{to\_tetrads()}{to\_tetrads()}}
+{\footnotesize\ttfamily int to\+\_\+tetrads (\begin{DoxyParamCaption}\item[{char $\ast$}]{bin,  }\item[{char}]{array\+\_\+of\+\_\+tetrads\mbox{[}20\mbox{]}\mbox{[}5\mbox{]} }\end{DoxyParamCaption})}
+
+
+
+Разбивает двоичное число на тетрады 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \mbox{[}\+I\+N\mbox{]}} & bin -\/ двоичное число \\
+\hline
+{\em \mbox{[}\+O\+U\+T\mbox{]}} & array\+\_\+of\+\_\+tetrads -\/ массив тетрад \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Количество тетрад 
+\end{DoxyReturn}

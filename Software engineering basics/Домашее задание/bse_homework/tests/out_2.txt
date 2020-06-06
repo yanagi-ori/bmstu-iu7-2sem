@@ -1,0 +1,3 @@
+Hello! It is the homework program of Bogatyrev Ivan IU7-22B
+Please, enter the path to your file:
+Empty File
